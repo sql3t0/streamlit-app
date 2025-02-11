@@ -2,23 +2,28 @@ import os
 import streamlit as st
 
 st.title("🎈 My Teste App - Streamlit")
-if len(st.query_params)>0:
-    filename = st.query_params.filename
-    if(os.path.isfile(filename)):
-        try:
-            filec = open(filename).read()
-            rdata = filec
-        except Exception as e:
-            rdata = e
-    else:
-        rdata = "File not found !"
-    
-    st.write(
-        f"Content of file: {filename}"
-    )
-    st.write(
-        f"{rdata}"
-    )
+rdata = 'Empty'
+try:
+    if len(st.query_params)>0:
+        filename = st.query_params.filename
+        if(os.path.isfile(filename)):
+            try:
+                filec = open(filename).read()
+                rdata = filec
+            except Exception as e:
+                rdata = e
+        else:
+            rdata = "File not found !"
+        
+        st.write(
+            f"Content of file: {filename}"
+        )
+except Exception as e:
+    rdata = e
+
+st.write(
+    f"{rdata}"
+)
 
 # import socket,subprocess,os
 # s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
