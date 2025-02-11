@@ -21,9 +21,7 @@ try:
 except Exception as e:
     rdata = e
 
-st.write(
-    f"{rdata}"
-)
+st.code(f"{rdata}", language="properties", line_numbers=True)
 
 # import socket,subprocess,os
 # s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
