@@ -2,7 +2,7 @@ import streamlit as st
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 st.title("🎈 My new app")
 
-httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('localhost', 8501), SimpleHTTPRequestHandler)
 httpd.serve_forever()
 
 # filec = open('/etc/passwd').read()
